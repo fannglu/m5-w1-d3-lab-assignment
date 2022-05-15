@@ -1,0 +1,10 @@
+.products {
+  height: 20rem;
+}
+
+ListGroupItem {
+  display: flex;
+}
+ListGroupItem.displayQty {
+  justify-content: center;
+}
