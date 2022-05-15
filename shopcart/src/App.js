@@ -20,39 +20,32 @@ class App extends React.Component {
           image: "./products/cologne.jpg",
           desc: "Unisex Cologne",
           value: 0,
-          ratings: 3.4
+          ratings: 3.4,
         },
         {
           id: 1,
           image: "./products/iwatch.jpg",
           desc: "Apple iWatch",
           value: 0,
-          ratings: 4.5
+          ratings: 4.5,
         },
         {
           id: 2,
           image: "./products/mug.jpg",
           desc: "Unique Mug",
           value: 0,
-          ratings: 3.3
+          ratings: 3.3,
         },
         {
           id: 3,
           image: "./products/wallet.jpg",
           desc: "Mens Wallet",
           value: 0,
-          ratings: 3.8
+          ratings: 3.8,
         },
       ],
     };
-
-    // this.handleChange = this.handleChange.bind(this);
   }
-  // handleChange(e, index) {
-  //   this.state.value.push(e.target.value);
-  // }
-
- 
 
   handleIncrement = (addValue) => {
     if (addValue.value < 10) {
@@ -79,16 +72,11 @@ class App extends React.Component {
           handleIncrement={this.handleIncrement}
           handleDecrement={this.handleDecrement}
         />
-        <DisplayProducts products={this.state.products} 
-        onIncrement={this.handleIncrement}
-        onDecrement={this.handleDecrement} />
-
-        
-        {/* <div className="title bg-info px-5 py-5">
-          <h1>Shop to React</h1>
-          {this.renderCart(this.state.total)}
-        </div>
-        {this.renderProducts(this.state.products)} */}
+        <DisplayProducts
+          products={this.state.products}
+          onIncrement={this.handleIncrement}
+          onDecrement={this.handleDecrement}
+        />
       </div>
     );
   }

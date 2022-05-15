@@ -42,16 +42,3 @@ export default function Navbar(props) {
     </Router>
   );
 }
-
-//  renderCart() {
-//     let totalQuantity = 0;
-//     this.state.value.forEach((item) => {
-//       totalQuantity += item;
-//     });
-//     return (
-//       <div className="cart">
-//         <FontAwesomeIcon icon={faShoppingCart} size="sm" />
-//         <span> {totalQuantity} items</span>
-//       </div>
-//     );
-//   }
