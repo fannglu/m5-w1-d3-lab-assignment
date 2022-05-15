@@ -6,16 +6,22 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DisplayProducts from "./displayProducts";
+import './navbar.css'
 
 export default function Navbar(props) {
   return (
     <Router>
       <nav>
-        <Link to="/">
-          <span>Shop 2</span>
-          <FontAwesomeIcon icon={faRegistered} />
+        <Link className="logo" to="/">
+          <h1>
+            Shop 2
+            <span>
+              <FontAwesomeIcon icon={faRegistered} />
+            </span>
+            eact
+          </h1>
         </Link>
-        <Link to="/showCart">
+        <Link to="/showCart" className="cart">
           <FontAwesomeIcon icon={faShoppingCart} size="sm" />
           <span> {props.totalQuantity} </span>
         </Link>
