@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import DisplayProducts from "./displayProducts";
 import "./navbar.css";
 import ShowCart from "./showCart";
+import  SignIn  from "./signin";
+import Checkout from "./signin";
 
 export default function Navbar(props) {
   return (
@@ -43,10 +45,15 @@ export default function Navbar(props) {
         <Route
           exact
           path="/showcart"
-          element={<ShowCart products={props.prods} />}
+          element={
+            <ShowCart
+              products={props.prods}
+              totalQuantity={props.totalQuantity}
+            />
+          }
         />
-        {/* <Route path="login" element={<Login />} />
-        <Route path="checkout" element={<Checkout />} /> */}
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="checkout" element={<Checkout />} />
       </Routes>
     </Router>
   );
