@@ -9,13 +9,16 @@ import Navbar from "./navbar";
 // import DisplayProducts from "./displayProducts";
 import products from "./products";
 
+
 // import nav bar ; call it return statement on the render function
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: products
+      products: products,
+      sortType: "norm",
+      listNum: "",
     };
   }
 
@@ -33,6 +36,22 @@ class App extends React.Component {
     }
   };
 
+  handleSort = (listNum, sortType) => {
+    listNum.sort((a, b) => {
+      switch (sortType) {
+        case "norm":
+          return a.id - b.id;
+          break;
+        case "asc":
+          return a.price - b.price;
+          break;
+        case "desc":
+          return b.price - a.price;
+      }
+    });
+    this.setState({ sortType });
+  };
+
   render() {
     return (
       <div className="App">
@@ -43,6 +62,9 @@ class App extends React.Component {
           prods={this.state.products}
           handleIncrement={this.handleIncrement}
           handleDecrement={this.handleDecrement}
+          handleSort={this.handleSort}
+          listNum={this.state.listNum}
+          sortType={this.state.sortType}
         />
         {/* <DisplayProducts
           products={this.state.products}

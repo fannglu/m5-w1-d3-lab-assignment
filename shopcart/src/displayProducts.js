@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./displayProducts.css";
 
+
 export default function DisplayProducts(props) {
   const [show, setShow] = useState(false);
   const [showImg, setShowImg] = useState({});
@@ -20,12 +21,25 @@ export default function DisplayProducts(props) {
 
   return (
     <div>
+      <div className="container text-center p-5">
+        <label> Sort Price By: </label>
+        <select className="m-3 "
+          onChange={(e) => props.handleSort(props.products, e.target.value)}
+        >
+          <option value="norm">Normal</option>
+          <option value="asc">Lowest</option>
+          <option value="desc">Highest</option>
+        </select>
+      </div>
       {props.products.map((product) => {
         return (
           <ListGroup className="products">
             <ListGroupItem key={product.id} className="product">
               <div className="displayP">
-                <h3>{product.desc}</h3>
+                <h3>
+                  {product.desc}{" "}
+                  <span className="text-danger h4 p-3"> ${product.price}</span>
+                </h3>
                 <img
                   onClick={() => handleShow(product)}
                   src={product.image}
