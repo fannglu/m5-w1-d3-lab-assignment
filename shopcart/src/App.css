@@ -41,3 +41,14 @@
   width:3em;
   text-align: center;
 }
+
+#loginForm input{
+  width: 15rem;
+}
+
+#loginForm {
+  width: 50%;
+}
+#loginForm .btn {
+  width: 8rem;
+}

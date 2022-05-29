@@ -58,7 +58,7 @@ export default function SignIn() {
 
 function LoginForm() {
     return(
-        <form className="d-flex flex-column border mt-3 mb-5 p-3 bg-white">
+        <form id="loginForm" className="d-flex flex-column border mt-3 mb-5 p-3 bg-white">
             <label className="m-2">Name:</label>
             <input type="text" name="text" placeholder="Your name" />
             <label className="m-2">Email:</label>
